@@ -1,0 +1,106 @@
+@import "./variables";
+
+.app {
+  background: $dark-grey;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 0 90px;
+
+  header {
+    border-bottom: 1px solid $dark-white;
+
+    h2 {
+      margin: 0 0 10px;
+    }
+  }
+
+  .form {
+    display: flex;
+
+    &_fields {
+      border-left: 1px solid $dark-white;
+      display: flex;
+      flex-direction: column;
+      margin: 0 40px 0 0;
+      padding: 6px 0 6px 20px;
+
+      &:first-child {
+        border: 0;
+        padding-left: 0;
+      }
+
+      &_container {
+        display: flex;
+        padding: 6px 0;
+
+        &_label {
+          font-weight: bold;
+          width: 200px;
+        }
+      }
+    }
+  }
+  .results {
+    border-top: 1px solid $dark-white;
+    padding: 10px 0 0;
+
+    &_label {
+      font-weight: bold;
+    }
+    &_result {
+      display: flex;
+      font-size: $font-size-xl;
+      font-weight: bold;
+      justify-content: center;
+    }
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .app {
+    .form {
+      flex-direction: column;
+
+      &_fields {
+        border-left: 0;
+        border-top: 1px solid $dark-white;
+        margin: 0;
+        padding: 10px 0;
+
+        &:first-child {
+          border: 0;
+          padding: 10px 0;
+        }
+      }
+    }
+    .results {
+      &_result {
+        font-size: $font-size-large;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .app {
+    .form {
+      &_fields {
+        &_container {
+          flex-direction: column;
+
+          &_label {
+            font-weight: bold;
+            padding: 0 0 10px;
+            width: 200px;
+          }
+        }
+      }
+    }
+    .results {
+      &_result {
+        padding: 20px 0 0;
+      }
+    }
+  }
+}
