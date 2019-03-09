@@ -204,6 +204,16 @@ const Form = () => {
           </span>
         </div>
       </section>
+      <section className="results">
+        <div>
+          <span className="results_label">New Mortgage</span>
+        </div>
+        <div>
+          <span className="results_result">
+            {formatter.format(housePurchasePrice - downPayment)}
+          </span>
+        </div>
+      </section>
     </section>
   );
 };
